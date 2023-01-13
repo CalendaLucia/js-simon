@@ -4,11 +4,13 @@ let randomNumbers = [];
 play.addEventListener('click', function () {
 
     const text = document.querySelector('.time-out');
-    text.style.display = 'none'
     const screen = document.getElementById('container-number');
+    text.style.display = 'none';
+
 
     // Generate 5 random numbers
     for (let i = 0; i < 5; i++) {
+
         const randomNumber = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
         randomNumbers.push(randomNumber);
         const number = document.createElement('span');
@@ -63,19 +65,26 @@ play.addEventListener('click', function () {
                 correctNumbersList.push(remember);
             }
         }
+
         text.innerHTML = 'Hai indovinato ' + correctNumbers + ' numeri: ' + correctNumbersList;
-       
+   
+      
+      
     }
-    restart();
+
+
 });
 
-function restart() {
+restart();
 
-    randomNumbers = [];
-    text.innerHTML = 'Hai 30 secondi';
-    text.style.display = 'block';
-    screen.innerHTML = '';
-    screen.style.display = 'block';
-    seconds.innerText = '30';
-    }
+// function restart() {
+
+//     randomNumbers = [];
+//     text.innerHTML = 'Hai 30 secondi';
+//     text.style.display = 'block';
+//     screen.innerHTML = '';
+//     screen.style.display = 'block';
+//     seconds.innerText = '30';
+
+//     } da rivedere
     
