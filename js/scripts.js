@@ -32,7 +32,7 @@ play.addEventListener('click',
 
          
                  const seconds = document.querySelector('.seconds');
-                 let counter = 10;
+                 let counter = 30;
                  const timer = setInterval(function () {
                  seconds.innerText = counter ;
 
