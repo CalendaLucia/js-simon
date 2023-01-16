@@ -1,5 +1,4 @@
 const play = document.getElementById('button');
-let randomNumbers = [];
 const text = document.querySelector('.time-out');
 const screen = document.getElementById('container-number');
 const seconds = document.querySelector('.seconds');
@@ -32,7 +31,7 @@ function startGame() {
     }, 30000);
 
     text.style.display = 'none';
-    let counter = 30;
+    let counter = 3;
     const timer = setInterval(function () {
 
         seconds.innerText = counter;
@@ -75,7 +74,7 @@ function response() {
             correctNumbersList.push(remember);
         }
     }
-    
+
     text.innerHTML = 'Hai indovinato ' + correctNumbers + ' numeri: ' + correctNumbersList;
     play.innerHTML = 'Rigioca';
     play.removeEventListener('click', startGame);
@@ -92,6 +91,7 @@ function response() {
 
     function hideNumber() {
         const numbers = document.querySelectorAll('.number');
+        
         for (let i = 0; i < numbers.length; i++) {
             
             numbers[i].style.display = 'none';
