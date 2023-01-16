@@ -3,10 +3,14 @@ const text = document.querySelector('.time-out');
 const screen = document.getElementById('container-number');
 const seconds = document.querySelector('.seconds');
 
+let generatedNumbers = [];
+let randomNumbers = [];
 function startGame() {
 
     // Reinizializza l'array prima di generare nuovi numeri casuali
+    generatedNumbers = [];
     randomNumbers = [];
+    
     // Clear the screen before creating new elements
     while (screen.firstChild) {
         screen.removeChild(screen.firstChild);
@@ -15,6 +19,11 @@ function startGame() {
     for (let i = 0; i < 5; i++) {
 
         const randomNumber = Math.floor(Math.random() * (99 - 1 + 1)) + 1;
+           while(generatedNumbers.includes(randomNumber)){
+            randomNumber = Math.floor(Math.random() * (99 - 1 + 1)) + 1;
+        }
+        
+        generatedNumbers.push(randomNumber);
         randomNumbers.push(randomNumber);
         const number = document.createElement('span');
         number.classList.add('number');
@@ -31,7 +40,7 @@ function startGame() {
     }, 30000);
 
     text.style.display = 'none';
-    let counter = 3;
+    let counter = 30;
     const timer = setInterval(function () {
 
         seconds.innerText = counter;
