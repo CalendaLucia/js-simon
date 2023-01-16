@@ -3,12 +3,12 @@ const text = document.querySelector('.time-out');
 const screen = document.getElementById('container-number');
 const seconds = document.querySelector('.seconds');
 
-let generatedNumbers = [];
+
 let randomNumbers = [];
 function startGame() {
 
     // Reinizializza l'array prima di generare nuovi numeri casuali
-    generatedNumbers = [];
+  
     randomNumbers = [];
     
     // Clear the screen before creating new elements
@@ -19,11 +19,12 @@ function startGame() {
     for (let i = 0; i < 5; i++) {
 
         const randomNumber = Math.floor(Math.random() * (99 - 1 + 1)) + 1;
-           while(generatedNumbers.includes(randomNumber)){
+         
+        while(randomNumbers.includes(randomNumber)){
             randomNumber = Math.floor(Math.random() * (99 - 1 + 1)) + 1;
         }
         
-        generatedNumbers.push(randomNumber);
+
         randomNumbers.push(randomNumber);
         const number = document.createElement('span');
         number.classList.add('number');
